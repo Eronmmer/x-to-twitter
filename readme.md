@@ -31,5 +31,5 @@ I got sick of seeing X on my timeline 🤢
 
 ## Coming soon
 
-- Publish to the Chrome Web Store
-- Add a popup with a button to toggle the replacement on and off
+- [ ] Publish to the Chrome Web Store
+- [ ] Popup with a button to toggle the replacement on and off

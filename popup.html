@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>X to Twitter</title>
+		<style>
+			*:focus {
+				outline: 0 !important;
+			}
+			body {
+				background-color: rgb(26, 36, 50);
+				border-radius: 10px;
+			}
+
+			.container {
+				height: 160px;
+				width: 300px;
+			}
+			.wrapper {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 0 10px;
+			}
+
+			.title {
+				color: white;
+				text-align: center;
+			}
+
+			.toggle-button-text {
+				color: white;
+				font-size: 16px;
+				font-weight: 500;
+			}
+
+			.toggle-button {
+				border: none !important;
+				outline: none !important;
+				box-shadow: none !important;
+				cursor: pointer;
+				display: flex;
+				-webkit-box-align: center;
+				align-items: center;
+				-webkit-box-pack: center;
+				justify-content: center;
+				background-color: transparent;
+				transition: background 0.3s, color 0.3s, transform 0.1s ease-out;
+				padding: 0px;
+				z-index: 20;
+				transform-origin: 36px 36px;
+				transform: rotate(0deg);
+			}
+
+			.toggle-button:focus,
+			.toggle-button:active {
+				outline: none !important;
+				border: none !important;
+				box-shadow: none !important;
+			}
+
+			.toggle-button.active {
+				transform: rotate(180deg);
+			}
+
+			.icon-container {
+				position: relative;
+				width: 70px;
+				height: 70px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				transition: transform 0.3s ease;
+			}
+
+			.icon-container::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				border: 3px solid rgb(85, 255, 138);
+				border-radius: 50%;
+				opacity: 0;
+				transition: opacity 0.3s ease;
+				box-sizing: border-box;
+			}
+
+			.icon-container.enabled::after {
+				opacity: 1;
+			}
+
+			.icon-container svg {
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="title">X to Twitter</h1>
+			<div class="wrapper">
+				<p class="toggle-button-text" id="toggleButtonText">
+					Replacement Enabled
+				</p>
+				<button id="toggleButton" class="toggle-button">
+					<div class="icon-container">
+						<svg
+							width="70"
+							height="70"
+							viewBox="0 0 72 72"
+							aria-hidden="true"
+							tabindex="-1"
+							fill="white"
+						>
+							<path
+								d="M31.5 18.57a18 18 0 109-.01v3.13a15 15 0 11-9 0v-3.12zm3-5.07v22a1.5 1.5 0 003 0v-22a1.5 1.5 0 00-3 0zM36 66a30 30 0 110-60 30 30 0 010 60z"
+								fill="#FFF"
+								transform="translate(0, 0)"
+							></path>
+						</svg>
+					</div>
+				</button>
+			</div>
+		</div>
+		<script src="popup.js"></script>
+	</body>
+</html>

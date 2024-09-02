@@ -5,8 +5,12 @@
   "description": "Replaces the noun 'X' with 'Twitter' on the Twitter timeline.",
   "permissions": [
     "activeTab",
+    "storage",
     "webNavigation"
   ],
+  "action": {
+    "default_popup": "popup.html"
+  },
   "content_scripts": [
     {
       "matches": ["*://*.x.com/*"],
@@ -15,6 +19,6 @@
     }
   ],
   "icons": {
-    "48": "icon.png"
+    "128": "icon.png"
   }
 }

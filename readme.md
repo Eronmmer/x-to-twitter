@@ -1,6 +1,9 @@
 # X to Twitter
 
 
+![new](https://github.com/user-attachments/assets/16638e14-8190-4f31-9bfc-38f284b7ea12)
+
+
 ## What is this?
 
 A simple Chrome extension that replaces the noun "X" with "Twitter" on the Twitter timeline.

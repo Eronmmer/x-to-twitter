@@ -13,8 +13,10 @@ const svgContainer = document.querySelector(".icon-container");
 function updateReplacementStatus(isEnabled) {
 	if (isEnabled) {
 		svgContainer.classList.add("enabled");
+		document.getElementById("toggleButton").classList.add("active");
 	} else {
 		svgContainer.classList.remove("enabled");
+		document.getElementById("toggleButton").classList.remove("active");
 	}
 }
 
@@ -29,7 +31,6 @@ document.getElementById("toggleButton").addEventListener("click", () => {
 	isXReplacementActive = !isXReplacementActive;
 	updateButtonText();
 	updateReplacementStatus(isXReplacementActive);
-	document.getElementById("toggleButton").classList.toggle("active");
 
 	chrome.storage.local.set({ isReplacementEnabled: isXReplacementActive });
 
@@ -38,5 +39,5 @@ document.getElementById("toggleButton").addEventListener("click", () => {
 			action: "toggleReplacement",
 			enabled: isXReplacementActive,
 		});
-  });
+	});
 });

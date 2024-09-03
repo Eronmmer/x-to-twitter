@@ -46,11 +46,11 @@
 				-webkit-box-pack: center;
 				justify-content: center;
 				background-color: transparent;
-				transition: background 0.3s, color 0.3s, transform 0.1s ease-out;
+				transition: background 0.5s, color 0.5s, transform 0.3s ease-out;
 				padding: 0px;
 				z-index: 20;
 				transform-origin: 36px 36px;
-				transform: rotate(0deg);
+				transform: rotate(180deg);
 			}
 
 			.toggle-button:focus,
@@ -60,8 +60,16 @@
 				box-shadow: none !important;
 			}
 
+			.toggle-button:hover {
+				transform: rotate(180deg) scale(1.1);
+			}
+
 			.toggle-button.active {
-				transform: rotate(180deg);
+				transform: rotate(0deg);
+			}
+
+			.toggle-button.active:hover {
+				transform: rotate(0deg) scale(1.1);
 			}
 
 			.icon-container {
@@ -71,7 +79,7 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				transition: transform 0.3s ease;
+				transition: transform 0.5s ease;
 			}
 
 			.icon-container::after {
@@ -84,7 +92,7 @@
 				border: 3px solid rgb(85, 255, 138);
 				border-radius: 50%;
 				opacity: 0;
-				transition: opacity 0.3s ease;
+				transition: opacity 0.5s ease;
 				box-sizing: border-box;
 			}
 

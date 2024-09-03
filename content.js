@@ -14,9 +14,12 @@ const TWEET_TEXT_SELECTOR = '[data-testid="tweetText"]';
 function replaceContent(element) {
 	if (!isXReplacementActive) return;
 	if (element.nodeType === Node.ELEMENT_NODE) {
-		element.textContent = element.textContent.replace(REGEX, REPLACEMENT);
-	} else if (element.nodeType === Node.TEXT_NODE) {
-		element.nodeValue = element.nodeValue.replace(REGEX, REPLACEMENT);
+		if (element.childNodes.length) {
+			element.childNodes.forEach((node) => replaceContent(node));
+		} else {
+			element.textContent &&
+				(element.textContent = element.textContent.replace(REGEX, REPLACEMENT));
+		}
 	}
 }
 
@@ -25,8 +28,6 @@ function processNewNodes(nodes) {
 	nodes.forEach((node) => {
 		if (node.nodeType === Node.ELEMENT_NODE) {
 			node.querySelectorAll(TWEET_TEXT_SELECTOR).forEach(replaceContent);
-		} else if (node.nodeType === Node.TEXT_NODE) {
-			replaceContent(node);
 		}
 	});
 }

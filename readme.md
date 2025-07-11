@@ -10,7 +10,7 @@ A simple Chrome extension that replaces the noun "X" with "Twitter" on the Twitt
 
 ## Why did you build this?
 
-I got sick of seeing X on my timeline 🤢
+Because why not?
 
 ## Installation
 
